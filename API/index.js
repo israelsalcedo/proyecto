@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 let app = express();
 
 let productRoutes = require('./routes/products');
-//let db = require('./config/db');
+let db = require('./config/db');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
