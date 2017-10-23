@@ -28,7 +28,8 @@ route.get('/:id',function(req,res){
 route.post('/',function(req,res){
     let product = new Product({
         name: req.body.name,
-        description: req.body.description
+        tittle: req.body.tittle,
+        comments: req.body.comments
     });
 
     product.save(function(err,product){
@@ -39,8 +40,21 @@ route.post('/',function(req,res){
 
 
 
-route.put('/',function(req,res){
-    res.status(202).send('Hola papu');
+route.put('/:id',function(req,res){
+    Product.findOneAndUpdate(req.params.id,
+        {
+            name : req.body.name,
+            title: req.body.tittle,
+            comments: req.body.comments
+
+
+    },
+    function (err,product){
+        if(err)
+        return
+        res.status(202).send('Register update sucessfully');
+    })
+   
 });
 
 
