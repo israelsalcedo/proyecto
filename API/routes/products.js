@@ -29,7 +29,8 @@ route.post('/',function(req,res){
     let product = new Product({
         name: req.body.name,
         tittle: req.body.tittle,
-        comments: req.body.comments
+        comments: req.body.comments,
+        price: req.body.price
     });
 
     product.save(function(err,product){
@@ -45,7 +46,8 @@ route.put('/:id',function(req,res){
         {
             name : req.body.name,
             title: req.body.tittle,
-            comments: req.body.comments
+            comments: req.body.comments,
+            price: req.body.price
 
 
     },

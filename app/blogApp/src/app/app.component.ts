@@ -8,6 +8,6 @@ import {ProductService} from './table/table.service'
   providers: [ProductService]
 })
 export class AppComponent {
-  title: String = 'La pareja';
-  body: string = 'perfecta'
+  title: String = 'KITTYS';
+  body: string = 'STORE'
 }

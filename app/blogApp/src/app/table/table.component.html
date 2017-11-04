@@ -7,14 +7,14 @@
 -->
 <table border= "2">
   <tr>
-    <th>ID</th><th>TITLE</th><th>CREATED</th><th>COMMENTS</th>
+    <th>ID</th><th>NAME</th><th>IMAGE</th><th>DESCRIPTION</th><th>PRICE</th>
   </tr>
   <tr *ngFor = "let photo of photos">
     <td> {{photo._id}}</td>
-      <td>{{photo.tittle | uppercase | convertToSpace: '-'}}</td>
-        <td>{{photo.created_at}}</td>
-        <td>{{photo.comments</td>
-         
+       <td>{{photo.name }}</td> 
+        <td><img [src]= "photo.tittle"[style.width.px]= "200"></td>
+        <td>{{photo.comments}}</td>
+        <td>{{photo.price}}</td>
      </tr>
      
   </table>
