@@ -1,0 +1,52 @@
+<!--<div>
+  <div *ngFor = "let photo of photos">
+       {{photo._id}} && {{photo.tittle}}
+  <br>
+  </div>
+</div>
+-->
+<table border= "2">
+  <tr>
+    <th>ID</th><th>TITLE</th><th>CREATED</th><th>COMMENTS</th>
+  </tr>
+  <tr *ngFor = "let photo of photos">
+    <td> {{photo._id}}</td>
+      <td>{{photo.tittle | uppercase | convertToSpace: '-'}}</td>
+        <td>{{photo.created_at}}</td>
+        <td>{{photo.comments</td>
+         
+     </tr>
+     
+  </table>
+  <br>
+  <br>
+
+  
+  <label>Name</label> <input type="text"[(ngModel)]= "newCat[0].name">
+  <label>Race</label> <input type = "text"[(ngModel)]= "newCat[0].race">
+  <label>Image Url</label> = <input type = "text"[(ngModel)]= "newCat[0].img"> 
+  <button (click) = addCat() >Add</button>
+<br>
+<br>
+
+
+<table border= "2">
+  <tr>
+    <th>Name</th><th>Race</th><th>Description</th><th>Image</th>
+  </tr>
+  <tr *ngFor = "let cat of cats">
+    <td> {{cat.name}}</td>
+      <td>{{cat.race | uppercase | convertToSpace: '-'}}</td>
+        <td>{{cat.description}}</td>
+        <td (click)= "setCurrentCat(cat)"><img [src]= "cat.img"[style.width.px]= "200"> </td>
+         <td>
+           <button (click)= "updateCat()"> Edit</button>
+           <button (click)= "removeCat(cat)">Delete </button>                         
+         </td>
+     </tr>
+     
+  </table>
+
+  <div>
+    <cat-description [cat]= 'currentCat'></cat-description>
+  </div>
